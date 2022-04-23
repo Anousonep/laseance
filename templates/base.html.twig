@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>{% block title %}La Seance{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        {% endblock %}
+
+    </head>
+    <body class="mainBody">
+        <header class="headerMenu">
+            <div class="containerNav">
+                <nav class="nav">
+                    <div class="containLogo">
+                        <div class="containerImgLogo">
+                            <img class="logo" src="{{ asset('css/img/la-seance-logo.png') }}">
+                        </div>
+
+                        <div class="containerTextLogo">
+                            <p>La</p>
+                            <p>Séance.net</p>
+                        </div>
+
+                    </div>
+                    <div class="containRedacProg">
+{#                        <div class="allRedaction">#}
+{#                            <div id="containRedaction">#}
+{#                                <a id="redaction" href="#">RÉDACTION</a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div id="underline"></div>#}
+                        <div class="allProgrammation">
+                            <div id="containProgrammation">
+                                <a id="programmation" href="#">PROGRAMMATION</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containSocial">
+                        <div class="iconSocial">
+                            <img id="icon-twitter" src="{{ asset('css/img/icon-twitter.png') }}">
+                        </div>
+                        <div class="iconSocial">
+                            <img id="icon-youtube" src="{{ asset('css/img/icon-youtube.png') }}">
+                        </div>
+                        <div class="iconSocial">
+                            <img id="icon-discord" src="{{ asset('css/img/icon-discord.png') }}">
+                        </div>
+                        <div class="iconSocial">
+                            <img id="icon-insta" src="{{ asset('css/img/icon-insta.png') }}">
+                        </div>
+                        <div class="iconSocial">
+                            <img id="icon-twitch" src="{{ asset('css/img/icon-twitch.png') }}">
+                        </div>
+                    </div>
+                    <div class="containConnexion">
+                        <div class="allConnexion">
+                            <div class="containerTeam">
+                                <a id="team" href="{{ path('team_index') }}">L'ÉQUIPE</a>
+                            </div>
+                            <div class="containerConnexion">
+                                <a id="log" href="#">CONNEXION</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        {% block body %}{% endblock %}
+            <script src="{{ asset('js/script.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+
+</html>

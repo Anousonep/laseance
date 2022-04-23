@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="containMainStream">
+        <div class="containMainTitle">
+            <h1 class="titleLaSeance">{{title}}</h1>
+        </div>
+
+        <div class="containStream">
+            <div class="stream">
+
+            </div>
+            <div class="chatStream">
+
+            </div>
+        </div>
+        <div class="containButtonStream">
+            <ul class="buttonStream">
+                <li class="buttonS" id="followButton"></li>
+                <li class="buttonS" id="subButton"></li>
+                <li class="buttonS" id="theaterButton"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="blank"></div>
+
+    <div class="containerVideosYt">
+        <div class="bar"></div>
+        <div class="containYtVideos">
+            <div class="containSubTitle">
+                <h2 class="subTitle">VIDÉOS YOUTUBE</h2>
+            </div>
+            <div class="vidLaSeance">
+                <div class="containVideosYtLaSeance"></div>
+            </div>
+            <div class="vidReplay">
+                <div class="containVideosYtReplay"></div>
+            </div>
+        </div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="containerArticles">
+        <div class="containArticles">
+            <div class="containSubTitle">
+                <h2 class="subTitle">ARTICLES</h2>
+            </div>
+
+            <div class="allArticles">
+                <div class="articleMain">
+                    {% set article = articles|last %}
+                    <h2>{{ article.title }}</h2>
+                </div>
+                <div class="allOtherArticles">
+                    <div class="otherArticles"></div>
+                    <div class="otherArticles"></div>
+                    <div class="otherArticles"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="containButtonArticles">
+            <ul class="buttonArticles">
+                <li class="buttonA" id="previousPage"></li>
+                <li class="buttonA" id="nextPage"></li>
+                <li class="buttonA" id="seeAllArticles"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="blankFooter"></div>
+
+    <footer class="allFooter"></footer>
+
+{% endblock %}

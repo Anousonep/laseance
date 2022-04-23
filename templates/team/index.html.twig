@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'ÉQUIPE!{% endblock %}
+
+{% block body %}
+
+    <div class="containerPageTeam">
+        <div class="containAllTeam">
+            <div class="containTitleChampion">
+                <div class="blankChampionTitle"></div>
+                <h2 class="titleChampion">SELECT YOUR CHAMPION</h2>
+            </div>
+
+
+
+{#            {% set champion = champions[0] %}#}
+{#            {{ dump(champions) }}#}
+{#            <div class="containChampions">#}
+{#                <div class="containerPictureChamp">#}
+{#                    <img id="pictureChamp" src="{{ asset('/uploads/' ~ champion.image) }}" alt="">#}
+{#                </div>#}
+{#                <div class="containerSkillsChamp">#}
+{#                    <div class="containSkills">#}
+{#                        <div class="allSkills">#}
+{#                            <div class="skills">#}
+{#                                <h3>SKILLS</h3>#}
+{#                                <div class="barSkills">#}
+{#                                    <div class="bar-skill">#}
+{#                                        <p class="name-skill">HUMOUR</p>#}
+{#                                        <progress class="bar" value="{{ champion.skills[0] }}" max="100"></progress>#}
+{#                                    </div>#}
+{#                                    <div class="bar-skill">#}
+{#                                        <p class="name-skill">CHARME</p>#}
+{#                                        <progress class="bar" value="{{ champion.skills[1] }}" max="100"></progress>#}
+{#                                    </div>#}
+{#                                    <div class="bar-skill">#}
+{#                                        <p class="name-skill">SKILLS</p>#}
+{#                                        <progress class="bar" value="{{ champion.skills[2] }}" max="100"></progress>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+
+{#                        </div>#}
+{#                        <div id="lineChamp"></div>#}
+{#                        <div class="containSocialChamp">#}
+{#                            <img class="iconSocialChamp" src="{{ asset('css/img/icon-youtube.png') }}">#}
+{#                            <img class="iconSocialChamp" src="{{ asset('css/img/icon-twitch.png') }}">#}
+{#                            <img class="iconSocialChamp" src="{{ asset('css/img/icon-discord.png') }}">#}
+{#                            <img class="iconSocialChamp" src="{{ asset('css/img/icon-twitter.png') }}">#}
+{#                            <img class="iconSocialChamp" src="{{ asset('css/img/icon-insta.png') }}">#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="containBio" >#}
+{#                        <div class="bio">#}
+{#                            <h3>BIO</h3>#}
+{#                            <p>{{ champion.description |raw }}</p>#}
+{#                            #}{#                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+            {#            {% endset %}#}
+            {% set i = 0 %}
+            {% for champion in champions %}
+
+                <div id="{{ 'perso' ~ i }}" class="containChampions">
+                    <div class="containerPictureChamp">
+                        <img id="pictureChamp" src="{{ asset('/uploads/' ~ champion.image) }}" alt="">
+                    </div>
+                    <div class="containerSkillsChamp">
+                        <div class="containSkills">
+                            <div class="allSkills">
+                                <div class="skills">
+                                    <h3>SKILLS</h3>
+                                    <div class="barSkills">
+                                        <div class="bar-skill">
+                                            <p class="name-skill">HUMOUR</p>
+                                            <progress class="bar" value="{{ champion.skills[0] }}" max="100"></progress>
+                                        </div>
+                                        <div class="bar-skill">
+                                            <p class="name-skill">CHARME</p>
+                                            <progress class="bar" value="{{ champion.skills[1] }}" max="100"></progress>
+                                        </div>
+                                        <div class="bar-skill">
+                                            <p class="name-skill">SKILLS</p>
+                                            <progress class="bar" value="{{ champion.skills[2] }}" max="100"></progress>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="lineChamp"></div>
+                            <div class="containSocialChamp">
+                                <img class="iconSocialChamp" src="{{ asset('css/img/icon-youtube.png') }}">
+                                <img class="iconSocialChamp" src="{{ asset('css/img/icon-twitch.png') }}">
+                                <img class="iconSocialChamp" src="{{ asset('css/img/icon-discord.png') }}">
+                                <img class="iconSocialChamp" src="{{ asset('css/img/icon-twitter.png') }}">
+                                <img class="iconSocialChamp" src="{{ asset('css/img/icon-insta.png') }}">
+                            </div>
+                        </div>
+                        <div class="containBio" >
+                            <div class="bio">
+                                <h3>BIO</h3>
+                                <p>{{ champion.description |raw }}</p>
+                                {#                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% set i = i+1 %}
+            {% endfor %}
+
+            <div class="containerMiniPicChamp">
+                <div class="allMiniPics">
+                    {% set i = 0 %}
+                    {% for champion in champions %}
+                        <img id="{{ 'miniPerso' ~ i }}" class="picChamps"  src="{{ asset('/uploads/' ~ champion.image) }}">
+                    {% set i = i+1 %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer></footer>
+
+    <script>
+
+        {#var championsInfo =#}
+
+        {#    {#}
+        {#        id: '{{ champion.id }}',#}
+        {#        image: '{{ champion.image }}',#}
+        {#        skill: '{{ champion.skills[0] }},{{ champion.skills[1] }},{{ champion.skills[2] }}',#}
+        {#        description: '{{ champion.description|e('js') }}',#}
+        {#        #}{#social: '{{ champion.social[0] }}',#}
+        {#    };#}
+
+
+
+        var championsInfo = {{ champions|json_encode()|raw }};
+    </script>
+
+{% endblock %}
